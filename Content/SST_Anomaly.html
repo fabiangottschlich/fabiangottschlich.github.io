@@ -1730,29 +1730,28 @@ zurückkehren</a></p>
 <p><a href="https://fabiangottschlich.github.io/dataviz.html">Zu Data
 Visualisation Posts zurückkehren</a></p>
 
+
 <p id="result"></p>
 
 <script>
 window.addEventListener('DOMContentLoaded', function() {
-  const imagePath = 'Graphics/SST_Anomaly/SST_Iberia.png'; // Specify the path of the original PNG file
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', imagePath, true);
-  xhr.responseType = 'blob';
-
-  xhr.onload = function() {
-	if (xhr.status === 200) {
-	  const blob = xhr.response;
-	  const reader = new FileReader();
-	  reader.onloadend = function() {
-		const base64 = reader.result;
-		const resultParagraph = document.getElementById('result');
-		resultParagraph.innerHTML = `<img src="${base64}" alt="Base64 Image">`;
-	  };
-	  reader.readAsDataURL(blob);
-	}
+  const imagePath = 'path/to/your/image.png'; // Specify the relative or absolute path to your image file
+  const reader = new FileReader();
+  reader.onloadend = function() {
+	const base64 = reader.result;
+	const resultParagraph = document.getElementById('result');
+	resultParagraph.innerHTML = `<img src="${base64}" alt="Base64 Image">`;
   };
 
-  xhr.send();
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.onchange = function() {
+	const file = this.files[0];
+	reader.readAsDataURL(file);
+  };
+
+  fileInput.click();
 });
 </script>
 
