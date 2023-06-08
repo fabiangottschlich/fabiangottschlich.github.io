@@ -1,0 +1,3 @@
+window.Adform.Tracking.TrackingPointId = 77235492;
+window.Adform.Tracking.TrackingPointName = "BKW_Visit";
+Adform.Tracking.CreateIframeElement("https://track.adform.net/serving/container/?pm=2121960&lid=77235492&ctype=0&media=0&PageName=BKW_Visit&rnd=1097598080&cpref=https%3a%2f%2fwww.google.ch%2f&loc=https%3a%2f%2fwww.bkw.ch%2fde%2fueber-uns%2faktuell%2fblog%2fmaerkte-und-analysen%2fden-tankern-mit-fluessigerdgas-auf-der-spur");
